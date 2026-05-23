@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ===== Semantic tokens (light = default-less; we set both with classes) ===== */
+
+:root,
+.dark {
+  --bg: #050810;
+  --bg-elev: #0A0F1C;
+  --bg-elev-2: #131A2B;
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-strong: rgba(255, 255, 255, 0.05);
+  --bg-input: rgba(10, 15, 28, 0.7);
+
+  --fg: #E7EBF3;
+  --fg-muted: rgba(231, 235, 243, 0.70);
+  --fg-subtle: rgba(231, 235, 243, 0.50);
+  --fg-faint: rgba(231, 235, 243, 0.35);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --accent-maroon: #8B2C40;
+  --accent-maroon-strong: #6E2333;
+  --accent-maroon-soft: rgba(139, 44, 64, 0.30);
+  --accent-gold: #C9A24B;
+  --accent-gold-soft: rgba(201, 162, 75, 0.40);
+  --accent-gold-faint: rgba(201, 162, 75, 0.15);
+  --accent-sage: #7BA897;
+
+  --hero-glow-1: rgba(139, 44, 64, 0.38);
+  --hero-glow-2: rgba(201, 162, 75, 0.18);
+  --hero-glow-3: rgba(92, 139, 122, 0.12);
+
+  /* Persistent, page-wide ambient (softer than hero-glow) */
+  --ambient-1: rgba(139, 44, 64, 0.14);
+  --ambient-2: rgba(201, 162, 75, 0.08);
+  --ambient-3: rgba(92, 139, 122, 0.06);
+
+  --dot-color-1: rgba(201, 162, 75, 0.09);
+  --dot-color-2: rgba(201, 162, 75, 0.05);
+  --grid-color: rgba(255, 255, 255, 0.035);
+
+  color-scheme: dark;
+}
+
+.light {
+  --bg: #F7F1E2;
+  --bg-elev: #FFFFFF;
+  --bg-elev-2: #F0E9D5;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-strong: rgba(255, 255, 255, 0.9);
+  --bg-input: rgba(255, 255, 255, 0.8);
+
+  --fg: #1A1F2E;
+  --fg-muted: rgba(26, 31, 46, 0.72);
+  --fg-subtle: rgba(26, 31, 46, 0.55);
+  --fg-faint: rgba(26, 31, 46, 0.40);
+
+  --border: rgba(26, 31, 46, 0.10);
+  --border-strong: rgba(26, 31, 46, 0.20);
+
+  --accent-maroon: #7A2336;
+  --accent-maroon-strong: #5C1A29;
+  --accent-maroon-soft: rgba(122, 35, 54, 0.12);
+  --accent-gold: #9B7A2A;
+  --accent-gold-soft: rgba(155, 122, 42, 0.30);
+  --accent-gold-faint: rgba(155, 122, 42, 0.18);
+  --accent-sage: #3E6B5A;
+
+  --hero-glow-1: rgba(122, 35, 54, 0.16);
+  --hero-glow-2: rgba(155, 122, 42, 0.18);
+  --hero-glow-3: rgba(62, 107, 90, 0.10);
+
+  --ambient-1: rgba(122, 35, 54, 0.07);
+  --ambient-2: rgba(155, 122, 42, 0.08);
+  --ambient-3: rgba(62, 107, 90, 0.05);
+
+  --dot-color-1: rgba(122, 35, 54, 0.12);
+  --dot-color-2: rgba(155, 122, 42, 0.08);
+  --grid-color: rgba(26, 31, 46, 0.06);
+
+  color-scheme: light;
+}
+
+/* ===== Tailwind v4 theme registration (utilities derived from semantic tokens) ===== */
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-bg-elev-2: var(--bg-elev-2);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-strong: var(--bg-card-strong);
+  --color-bg-input: var(--bg-input);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-maroon: var(--accent-maroon);
+  --color-maroon-strong: var(--accent-maroon-strong);
+  --color-maroon-soft: var(--accent-maroon-soft);
+  --color-gold: var(--accent-gold);
+  --color-gold-soft: var(--accent-gold-soft);
+  --color-gold-faint: var(--accent-gold-faint);
+  --color-sage: var(--accent-sage);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-arabic: var(--font-noto-arabic), "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-arabic-display: var(--font-amiri), "Noto Naskh Arabic", serif;
+}
+
+/* ===== Base ===== */
+
+html,
+body {
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Persistent, page-wide ambient gradient (stays put while scrolling) */
+body {
+  background-color: transparent;
+  background-image:
+    radial-gradient(60vw 55vh at 18% 6%, var(--ambient-1), transparent 60%),
+    radial-gradient(55vw 50vh at 88% 18%, var(--ambient-2), transparent 60%),
+    radial-gradient(45vw 45vh at 8% 78%, var(--ambient-2), transparent 65%),
+    radial-gradient(50vw 45vh at 92% 60%, var(--ambient-1), transparent 65%),
+    radial-gradient(70vw 55vh at 50% 95%, var(--ambient-3), transparent 65%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-color 0.4s ease;
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+}
+
+html[lang="ar"] .font-display {
+  font-family: var(--font-arabic-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent-maroon);
+  color: #fff;
+}
+
+/* ===== Decorative utilities ===== */
+
+.bg-qatari-dots {
+  background-image:
+    radial-gradient(var(--dot-color-1) 1px, transparent 1px),
+    radial-gradient(var(--dot-color-2) 1px, transparent 1px);
+  background-size: 36px 36px, 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+.bg-qatari-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 88px 88px;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(circle at 22% 18%, var(--hero-glow-1), transparent 55%),
+    radial-gradient(circle at 82% 72%, var(--hero-glow-2), transparent 60%),
+    radial-gradient(circle at 50% 100%, var(--hero-glow-3), transparent 70%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.glass-strong {
+  background: var(--bg-card-strong);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+}
+
+.hairline-gold {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-gold-soft),
+    transparent
+  );
+}
+
+/* RTL niceties */
+html[dir="rtl"] .ltr-only { display: none; }
+html[dir="ltr"] .rtl-only { display: none; }
+
+/* Track & arrow direction flips */
+html[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}
