@@ -8,8 +8,8 @@ const en = {
   person: {
     name: "Muhannad Alyafei",
     shortName: "Muhannad Alyafei",
-    title: "Head of Section, Tarsheed",
-    organization: "KAHRAMAA · Tarsheed",
+    title: "Head of Community Awareness & Development Section",
+    organization: "Rationalization & Energy Efficiency Department, KAHRAMAA",
     location: "Doha, Qatar",
     initials: "MA",
   },
@@ -30,43 +30,39 @@ const en = {
     switchLanguage: "العربية",
   },
   hero: {
-    eyebrow: "Head of Section · Tarsheed · KAHRAMAA",
+    eyebrow: "Head of Community Awareness & Development Section · Rationalization & Energy Efficiency Department · KAHRAMAA",
     headline: "Leading Sustainable Awareness for Qatar's Future",
     subhead:
-      "A Qatari professional serving as Head of Section at Tarsheed, contributing to conservation, energy efficiency, and national sustainability goals in line with Qatar National Vision 2030.",
+      "A Qatari professional serving as Head of the Community Awareness & Development Section within the Rationalization & Energy Efficiency Department, contributing to conservation, energy efficiency, and national sustainability goals in line with Qatar National Vision 2030.",
     primaryCta: "View Profile",
     primaryHref: "#about",
     secondaryCta: "Contact",
     secondaryHref: "#contact",
     alignment: "Aligned with Qatar National Vision 2030",
     statusLabel: "Currently",
-    statusValue: "Head of Section · Tarsheed",
+    statusValue: "Head of Community Awareness & Development Section",
   },
   about: {
     label: "About",
     title: "A Qatari professional committed to national service.",
     paragraphs: [
       "A Qatari citizen and public-service professional working within Tarsheed — KAHRAMAA's National Program for Conservation and Energy Efficiency. His work centers on leadership, public awareness, and the responsible stewardship of Qatar's natural resources.",
-      "As Head of Section, he leads a multidisciplinary team focused on strategic communication, community engagement, and sustainability initiatives that align with Qatar National Vision 2030. His approach pairs operational discipline with a deep commitment to the country, its people, and its future.",
+      "As Head of the Community Awareness & Development Section, he leads a multidisciplinary team focused on strategic communication, community engagement, and sustainability initiatives that align with Qatar National Vision 2030. His approach pairs operational discipline with a deep commitment to the country, its people, and its future.",
     ],
     quote:
       "Service to Qatar is the foundation of every effort — today and for generations to come.",
     highlights: [
-      { label: "Role", value: "Head of Section" },
-      { label: "Program", value: "Tarsheed" },
-      { label: "Authority", value: "KAHRAMAA" },
+      { label: "Role", value: "Head of Community Awareness & Development Section" },
+      { label: "Department", value: "Rationalization & Energy Efficiency" },
+      { label: "Authority", value: "Qatar General Electricity & Water Corporation \"KAHRAMAA\"" },
       { label: "Based in", value: "Doha, Qatar" },
     ],
-    alignmentEyebrow: "National Alignment",
-    alignmentBody:
-      "Working in line with Qatar National Vision 2030's environmental development pillar — supporting a balanced approach to growth and resource stewardship.",
-    alignmentHighlight: "Qatar National Vision 2030",
   },
   leadership: {
     label: "Leadership",
     title: "A role built on stewardship, awareness, and impact.",
     intro:
-      "As Head of Section, his responsibilities span communication, community engagement, and the long-term sustainability priorities of the program.",
+      "As Head of the Community Awareness & Development Section, his responsibilities span communication, community engagement, and the long-term sustainability priorities of the department.",
     cards: [
       {
         icon: "MessageSquare",
@@ -149,7 +145,7 @@ const en = {
     note: "Placeholder highlights — easy to replace with verified details.",
     highlightLabel: "Highlight",
     items: [
-      "Appointed as Head of Section",
+      "Appointed as Head of the Community Awareness & Development Section",
       "Supports national conservation awareness",
       "Works within Tarsheed initiatives",
       "Contributes to sustainability-focused communication",
@@ -165,7 +161,7 @@ const en = {
       { year: "Early Career", title: "Public Sector Beginnings", text: "Gained experience across public-facing roles and national initiatives." },
       { year: "Joining Tarsheed", title: "Tarsheed · KAHRAMAA", text: "Joined the national program for conservation and energy efficiency." },
       { year: "Leadership Growth", title: "Increasing Responsibility", text: "Expanded scope across strategy, communication, and community engagement." },
-      { year: "Today", title: "Head of Section Appointment", text: "Leads a multidisciplinary section advancing Tarsheed's mission." },
+      { year: "Today", title: "Head of Community Awareness & Development Section", text: "Leads a multidisciplinary section within the Rationalization & Energy Efficiency Department." },
     ],
   },
   gallery: {
@@ -228,7 +224,9 @@ const en = {
       subject: "Subject",
       message: "Message",
       submit: "Send message",
+      sending: "Sending…",
       sent: "Sent",
+      error: "Something went wrong. Please try again or email directly.",
       disclaimer: "By submitting, you agree to a professional, respectful tone.",
     },
   },

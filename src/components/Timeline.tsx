@@ -36,8 +36,8 @@ export function Timeline({ dict }: Props) {
                       >
                         <span
                           aria-hidden
-                          className={`absolute top-1 start-0 md:start-auto md:top-2 h-6 w-6 rounded-full bg-bg-elev border border-gold-soft flex items-center justify-center ${
-                            isEnd ? "md:-start-3" : "md:-end-3"
+                          className={`absolute top-1 start-0 md:top-2 h-6 w-6 rounded-full bg-bg-elev border border-gold-soft flex items-center justify-center ${
+                            isEnd ? "md:-start-3" : "md:start-auto md:-end-3"
                           }`}
                         >
                           <span className="h-2 w-2 rounded-full bg-gold" />

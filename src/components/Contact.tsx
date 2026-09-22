@@ -8,14 +8,38 @@ import { Reveal } from "./Reveal";
 
 type Props = { dict: Dictionary["contact"] };
 
-export function Contact({ dict }: Props) {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "sending" | "sent" | "error";
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export function Contact({ dict }: Props) {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4500);
-    (e.currentTarget as HTMLFormElement).reset();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          subject: data.get("subject"),
+          message: data.get("message"),
+          company: data.get("company"),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 4500);
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -84,17 +108,34 @@ export function Contact({ dict }: Props) {
                 <Field label={dict.form.subject} name="subject" />
                 <Field label={dict.form.message} name="message" required textarea />
 
+                <input
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
+
                 <div className="flex items-center justify-between gap-4 pt-1">
-                  <p className="text-xs text-fg-faint">{dict.form.disclaimer}</p>
+                  <p className="text-xs text-fg-faint">
+                    {status === "error" ? (
+                      <span className="text-maroon">{dict.form.error}</span>
+                    ) : (
+                      dict.form.disclaimer
+                    )}
+                  </p>
                   <button
                     type="submit"
-                    disabled={submitted}
+                    disabled={status === "sending" || status === "sent"}
                     className="inline-flex items-center gap-2 px-5 h-11 rounded-md text-sm font-medium text-white bg-maroon hover:bg-maroon-strong border border-gold-soft transition-colors disabled:opacity-70 shrink-0"
                   >
-                    {submitted ? (
+                    {status === "sent" ? (
                       <>
                         <Check size={16} /> {dict.form.sent}
                       </>
+                    ) : status === "sending" ? (
+                      dict.form.sending
                     ) : (
                       <>
                         {dict.form.submit} <Send size={14} className="flip-rtl" />

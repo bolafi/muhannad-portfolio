@@ -48,20 +48,6 @@ export function About({ dict }: Props) {
                 </dl>
               </div>
             </Reveal>
-
-            <Reveal delay={0.2}>
-              <div className="mt-6 glass rounded-2xl p-6">
-                <div className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-sage" />
-                  <span className="text-xs tracking-[0.22em] uppercase text-fg-subtle">
-                    {dict.alignmentEyebrow}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm text-fg-muted leading-relaxed">
-                  {dict.alignmentBody}
-                </p>
-              </div>
-            </Reveal>
           </div>
         </div>
       </div>
