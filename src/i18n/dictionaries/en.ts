@@ -169,6 +169,11 @@ const en = {
     title: "Moments from the work.",
     note: "A glimpse into engagements, campaigns, and initiatives across Qatar.",
     items: [
+       {
+        title: "Speaking Engagements",
+        caption: "Panels, briefings, and conferences",
+        src: "/gallery/1.jpg",
+      },
       {
         title: "Official Events",
         caption: "Public engagements & national forums",
@@ -184,11 +189,7 @@ const en = {
         caption: "Working alongside the Tarsheed section",
         src: "/gallery/PHOTO-2025-09-17-11-57-43%202.jpg",
       },
-      {
-        title: "Speaking Engagements",
-        caption: "Panels, briefings, and conferences",
-        src: "/gallery/PHOTO-2025-09-17-11-57-43%203.jpg",
-      },
+     
       {
         title: "Sustainability Activities",
         caption: "Initiatives under KAHRAMAA",
