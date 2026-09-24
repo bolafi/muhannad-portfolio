@@ -50,7 +50,7 @@ export function Hero({ dict, person }: Props) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
-              className="mt-6 max-w-2xl text-base md:text-lg text-fg-muted text-pretty"
+              className="mt-6 max-w-2xl text-base md:text-lg text-fg-muted text-pretty whitespace-pre-line"
             >
               {dict.subhead}
             </motion.p>
@@ -113,7 +113,7 @@ export function Hero({ dict, person }: Props) {
               />
               <div className="relative aspect-[4/5] rounded-[18px] overflow-hidden glass-strong">
                 <Image
-                  src="/photo.jpg"
+                  src="/new-muhannad.jpg"
                   alt={`${person.name} — ${person.title}`}
                   fill
                   priority
