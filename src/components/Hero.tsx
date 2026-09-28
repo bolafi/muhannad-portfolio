@@ -113,7 +113,7 @@ export function Hero({ dict, person }: Props) {
               />
               <div className="relative aspect-[4/5] rounded-[18px] overflow-hidden glass-strong">
                 <Image
-                  src="/new-muhannad.jpg"
+                  src="/muhannad-centered.jpg"
                   alt={`${person.name} — ${person.title}`}
                   fill
                   priority

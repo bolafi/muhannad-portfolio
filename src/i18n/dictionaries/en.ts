@@ -155,13 +155,13 @@ const en = {
   },
   timeline: {
     label: "Journey",
-    title: "A professional journey shaped by service.",
+    title: "Career milestones.",
     items: [
-      { year: "Education", title: "Academic Foundation", text: "Built a foundation in communication, leadership, and public service." },
-      { year: "Early Career", title: "Public Sector Beginnings", text: "Gained experience across public-facing roles and national initiatives." },
-      { year: "Joining Tarsheed", title: "Tarsheed · KAHRAMAA", text: "Joined the national program for conservation and energy efficiency." },
-      { year: "Leadership Growth", title: "Increasing Responsibility", text: "Expanded scope across strategy, communication, and community engagement." },
-      { year: "Today", title: "Head of Community Awareness & Development Section", text: "Leads a multidisciplinary section within the Rationalization & Energy Efficiency Department." },
+      { year: "2007 – 2016", title: "Customer Service Officer", text: "Developed subscriber services and managed operational processes." },
+      { year: "2016 – 2018", title: "Assistant Awareness Officer", text: "Delivered campaigns, events, and media programs." },
+      { year: "2018 – 2021", title: "Awareness Officer", text: "Managed awareness projects and built institutional partnerships." },
+      { year: "2021 – 2022", title: "Supervisor, Community Awareness & Development Section", text: "Led operational teams and represented KAHRAMAA locally and internationally." },
+      { year: "2022 – Present", title: "Head of Community Awareness & Development Section", text: "Leads the national awareness strategy and manages initiatives and partnerships." },
     ],
   },
   gallery: {
